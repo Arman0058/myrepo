@@ -1,11 +1,133 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arman’s Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Arman's personal website — hosted on GitHub Pages." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa6bd; --accent:#6ee7b7; --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: linear-gradient(180deg,#071026 0%, #07182a 40%, #081528 100%); color:#e6eef8;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45;
+      display:flex; align-items:center; justify-content:center; padding:40px;
+    }
+    .site{
+      width:100%; max-width:980px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px; padding:34px; box-shadow: 0 10px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+    .header{display:flex; align-items:center; gap:18px}
+    .logo{
+      width:78px; height:78px; border-radius:14px; display:grid; place-items:center; font-weight:700; font-size:26px;
+      background: linear-gradient(135deg,var(--accent), var(--accent-2)); color:#06202a; box-shadow: 0 6px 20px rgba(96,165,250,0.12);
+    }
+    h1{margin:0; font-size:28px; letter-spacing:-0.3px}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+
+    .content{display:grid; grid-template-columns:1fr 300px; gap:22px; margin-top:26px}
+    .card{background:var(--card); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+    .hero{min-height:180px; display:flex; flex-direction:column; justify-content:center}
+    .hero h2{margin:0 0 8px; font-size:22px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .buttons{margin-top:18px; display:flex; gap:12px}
+    .btn{padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-flex; gap:10px; align-items:center}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#052026;}
+    .btn-ghost{background:transparent; color:var(--accent-2); border:1px solid rgba(96,165,250,0.12)}
+
+    .sidebar .meta{display:flex; flex-direction:column; gap:12px}
+    .meta .item{display:flex; align-items:center; gap:10px}
+    .muted{color:var(--muted); font-size:14px}
+
+    .features{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px}
+    .feature{background:var(--glass); border-radius:10px; padding:12px}
+    .feature h4{margin:0 0 6px}
+    .footer{margin-top:18px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* responsive */
+    @media (max-width:820px){
+      .content{grid-template-columns:1fr;}
+      .sidebar{order:2}
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Arman’s Website 🌐</h1>
-  <p>This page is hosted using <b>GitHub Pages</b>.</p>
+  <main class="site" role="main">
+    <header class="header">
+      <div class="logo">A</div>
+      <div>
+        <h1>Arman’s Website</h1>
+        <p class="lead">Simple, fast, and hosted on GitHub Pages — hello from Arman!</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <div>
+        <div class="card hero">
+          <h2>Welcome to Arman’s Website 🌐</h2>
+          <p>This is my GitHub Pages site. I build small projects, learn DevOps, and write about tools.</p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-ghost" href="https://github.com/Arman0058" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="card" id="projects">
+          <h3>Featured</h3>
+          <div class="features">
+            <div class="feature">
+              <h4>DevOps Notes</h4>
+              <p class="muted">Scripts, tips and small tutorials for daily DevOps work.</p>
+            </div>
+            <div class="feature">
+              <h4>Sample Apps</h4>
+              <p class="muted">Tiny web demos and experiments hosted here.</p>
+            </div>
+            <div class="feature">
+              <h4>Git Experiments</h4>
+              <p class="muted">Branching, merges and simple CI pipeline examples.</p>
+            </div>
+            <div class="feature">
+              <h4>Contact</h4>
+              <p class="muted">Open an issue on the repo or reach me on GitHub.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>About</h3>
+          <p class="muted">Hi — I’m Arman. I tinker with Linux, containers, and CI/CD. This is a minimal personal landing page.</p>
+
+          <div class="meta" style="margin-top:12px">
+            <div class="item"><strong>Location</strong><span class="muted">India</span></div>
+            <div class="item"><strong>Focus</strong><span class="muted">DevOps & Automation</span></div>
+            <div class="item"><strong>Contact</strong><span class="muted"><a href="https://github.com/Arman0058" target="_blank" rel="noopener">@Arman0058</a></span></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Quick links</h3>
+          <ul class="muted" style="padding-left:18px; margin:8px 0 0">
+            <li><a class="muted" href="#projects">Projects</a></li>
+            <li><a class="muted" href="https://github.com/Arman0058/myrepo" target="_blank" rel="noopener">Repository</a></li>
+            <li><a class="muted" href="#" onclick="alert('Thanks for visiting!')">Say hi</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <div class="footer">Made with ❤️ • Hosted on GitHub Pages</div>
+  </main>
 </body>
 </html>
